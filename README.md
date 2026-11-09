@@ -100,7 +100,7 @@ http://localhost:4200
 
 ## GitHub Pages
 
-The `.github/workflows/pages.yml` workflow builds and publishes the Angular frontend at the site root and the checked-in HTML guides under `/docs/`. It runs on pushes to `main` or `master`, or manually from the GitHub Actions tab. In the repository's **Settings → Pages**, set the build and deployment source to **GitHub Actions**.
+The `.github/workflows/pages.yml` workflow builds and publishes the Angular frontend at the site root. It runs on pushes to `main` or `master`, or manually from the GitHub Actions tab. In the repository's **Settings → Pages**, set the build and deployment source to **GitHub Actions**.
 
 GitHub Pages serves static files only. The Spring Boot API is not included, so API-backed dashboard, ride, driver, fare, and SQL features need a separately hosted backend. The frontend currently targets `http://localhost:8080/api`.
 

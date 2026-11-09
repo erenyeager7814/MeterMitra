@@ -41,9 +41,8 @@ jobs:
 
       - name: Assemble static site
         run: |
-          mkdir -p _site/docs
+          mkdir -p _site
           cp -R frontend/dist/metermitra-ui/browser/. _site/
-          cp docs/*.html _site/docs/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
