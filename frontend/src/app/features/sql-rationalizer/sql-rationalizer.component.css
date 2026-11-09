@@ -1,0 +1,45 @@
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.hero h1 { max-width: 650px; margin: 0; font-size: clamp(28px, 4vw, 42px); letter-spacing: -1.3px; }
+.eyebrow { margin: 0 0 8px; color: var(--accent-dark); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.intro { max-width: 650px; margin-bottom: 0; color: var(--muted); line-height: 1.6; }
+.scope-note { display: grid; gap: 6px; min-width: 230px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: #f8fbfc; }
+.scope-note span, .actions span, .section-heading > span { color: var(--muted); font-size: 13px; }
+.workspace { padding-top: 24px; }
+.editor-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; }
+.editor-label { color: var(--ink); font-size: 14px; }
+.optional { color: var(--muted); font-weight: 500; }
+textarea { width: 100%; margin-top: 8px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; padding: 14px; color: #e7edf5; background: #17202a; font: 13px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.sql-editor { min-height: 320px; }
+.schema-editor { min-height: 180px; color: #d1e9df; }
+.actions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 14px; }
+.action-buttons { display: flex; gap: 10px; }
+button.secondary { border: 1px solid var(--line); color: var(--ink); background: white; }
+button.secondary:hover { background: #f0f5f6; }
+.ai-error { margin: 12px 0 0; padding: 12px 14px; border-radius: 6px; color: var(--danger); background: #fdebed; }
+.ai-summary { padding: 18px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.ai-summary p { margin-bottom: 0; line-height: 1.6; color: var(--muted); }
+.ai-inventory { margin-top: 12px; }
+.rationalizations { display: grid; gap: 8px; }
+.rationalizations article { display: grid; grid-template-columns: minmax(110px, max-content) 20px minmax(110px, max-content) 1fr; align-items: center; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.rationalizations p { margin: 0; color: var(--muted); }
+.rationalizations small { display: block; margin-top: 4px; }
+.rewrite { overflow-x: auto; padding: 16px; border-radius: 8px; color: #e7edf5; background: #17202a; font: 13px/1.65 ui-monospace, SFMono-Regular, Consolas, monospace; white-space: pre-wrap; }
+.results { padding-top: 8px; padding-bottom: 48px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 18px 0 14px; }
+.section-heading h2 { margin: 0; font-size: 22px; }
+.section-heading .eyebrow { margin-bottom: 4px; }
+.inventory { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.inventory article { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-height: 110px; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.inventory article > span { color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.inventory article > strong { font-size: 25px; }
+.inventory small { overflow-wrap: anywhere; color: var(--muted); }
+.inventory b { color: var(--accent-dark); }
+.findings-heading { margin-top: 28px; }
+.finding-list { display: grid; gap: 10px; }
+.finding { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: start; padding: 16px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+.finding h3 { margin: 0 0 6px; font-size: 15px; }
+.finding p { margin: 0 0 8px; color: var(--muted); line-height: 1.5; }
+.finding small { color: var(--ink); line-height: 1.5; }
+.pill.high { background: #fdebed; color: var(--danger); }
+@media (max-width: 900px) { .inventory { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 720px) { .hero { align-items: flex-start; flex-direction: column; } .editor-grid, .inventory { grid-template-columns: 1fr; } .actions { align-items: stretch; flex-direction: column; } .action-buttons { flex-direction: column; } .actions button { width: 100%; } .section-heading { align-items: flex-start; flex-direction: column; } .rationalizations article { grid-template-columns: 1fr; } }

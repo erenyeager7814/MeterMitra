@@ -1,0 +1,67 @@
+<section class="page-section">
+  <div class="section-inner hero">
+    <div>
+      <p class="eyebrow">Live dispatch console</p>
+      <h1>Keep rides, drivers, and electric autos moving.</h1>
+    </div>
+    <div class="fare-tool">
+      <label>
+        Distance in km
+        <input type="number" min="0.1" step="0.1" [(ngModel)]="distanceKm" (input)="estimateFare()">
+      </label>
+      <label class="check-row">
+        <input type="checkbox" [(ngModel)]="peakHour" (change)="estimateFare()">
+        Peak hour
+      </label>
+      <strong *ngIf="fare">{{ fare.fare | currency:'INR':'symbol':'1.0-0' }}</strong>
+      <span *ngIf="fare">{{ fare.formula }}</span>
+    </div>
+  </div>
+</section>
+
+<section class="section-inner" *ngIf="errorMessage">
+  <p class="error">{{ errorMessage }}</p>
+</section>
+
+<section class="section-inner stats" *ngIf="summary">
+  <article>
+    <span>Total drivers</span>
+    <strong>{{ summary.totalDrivers }}</strong>
+  </article>
+  <article>
+    <span>Available drivers</span>
+    <strong>{{ summary.availableDrivers }}</strong>
+  </article>
+  <article>
+    <span>Active rides</span>
+    <strong>{{ summary.activeRides }}</strong>
+  </article>
+  <article>
+    <span>Available autos</span>
+    <strong>{{ summary.availableRickshaws }}</strong>
+  </article>
+</section>
+
+<section class="section-inner">
+  <div class="section-heading">
+    <h2>Rickshaw Fleet</h2>
+    <span>{{ rickshaws.length }} vehicles</span>
+  </div>
+
+  <div class="fleet-grid">
+    <article *ngFor="let rickshaw of rickshaws">
+      <div>
+        <strong>{{ rickshaw.registrationNumber }}</strong>
+        <span>{{ rickshaw.area }}</span>
+      </div>
+      <span class="pill" [class.warn]="rickshaw.status === 'MAINTENANCE'" [class.ok]="rickshaw.status === 'AVAILABLE'">
+        {{ rickshaw.status }}
+      </span>
+      <div class="battery">
+        <span [style.width.%]="rickshaw.batteryPercent"></span>
+      </div>
+      <small>{{ rickshaw.batteryPercent }}% battery</small>
+    </article>
+  </div>
+</section>
+

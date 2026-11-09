@@ -1,0 +1,21 @@
+<header class="shell-header">
+  <div class="brand">
+    <span class="brand-mark">MM</span>
+    <div>
+      <strong>MeterMitra</strong>
+      <span>Auto rickshaw operations</span>
+    </div>
+  </div>
+
+  <nav aria-label="Primary navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    <a routerLink="/rides" routerLinkActive="active">Rides</a>
+    <a routerLink="/drivers" routerLinkActive="active">Drivers</a>
+    <a routerLink="/sql-rationalizer" routerLinkActive="active">SQL Rationalizer</a>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+

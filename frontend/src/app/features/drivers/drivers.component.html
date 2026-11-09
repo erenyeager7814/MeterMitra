@@ -1,0 +1,41 @@
+<section class="page-section">
+  <div class="section-inner list-heading">
+    <div>
+      <p class="eyebrow">Driver supply</p>
+      <h1>Driver roster</h1>
+    </div>
+    <span>{{ drivers.length }} onboarded</span>
+  </div>
+</section>
+
+<section class="section-inner" *ngIf="errorMessage">
+  <p class="error">{{ errorMessage }}</p>
+</section>
+
+<section class="section-inner">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Rating</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let driver of drivers">
+          <td>{{ driver.name }}</td>
+          <td>{{ driver.phone }}</td>
+          <td>{{ driver.rating | number:'1.1-1' }}</td>
+          <td>
+            <span class="pill" [class.ok]="driver.status === 'AVAILABLE'" [class.warn]="driver.status === 'OFFLINE'">
+              {{ driver.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
