@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/rickshaws")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(originPatterns = {"http://localhost:4200", "https://*.vercel.app"})
 public class RickshawController {
 
     private final RickshawRepository rickshawRepository;
